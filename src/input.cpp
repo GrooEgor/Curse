@@ -3,6 +3,15 @@
 
 using namespace std;
 
+void Delete_punctuation_marks(string& str)
+{
+    for (size_t i = 0; i < str.length(); i++) {
+        if (str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?') {
+            swap(str[i],str[str.size()-1]);
+            str.pop_back();
+        }
+    }
+}
 vector<string> Get_data_from_document(string& path)
 {
     ifstream document(path);
@@ -13,6 +22,7 @@ vector<string> Get_data_from_document(string& path)
     while (!document.eof()) {
         string temp;
         document >> temp;
+        Delete_punctuation_marks(temp);
         data.push_back(temp);
     }
     document.close();
