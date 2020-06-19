@@ -24,7 +24,7 @@ bool Check_permissible_symbols(const char symbol)
 bool Check_permissible_word(const string str)
 {
     for (size_t i = 0; i < str.length(); i++) {
-        if(!Check_permissible_symbols(str[i])){
+        if (!Check_permissible_symbols(str[i])) {
             return false;
         }
     }
@@ -41,7 +41,7 @@ vector<string> Get_data_from_document(string& path)
         string temp;
         document >> temp;
         Delete_punctuation_marks(temp);
-        if(!Check_permissible_word(temp)){
+        if (!Check_permissible_word(temp)) {
             continue;
         }
         data.push_back(temp);
