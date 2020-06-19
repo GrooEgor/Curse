@@ -7,10 +7,28 @@ void Delete_punctuation_marks(string& str)
 {
     for (size_t i = 0; i < str.length(); i++) {
         if (str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?') {
-            swap(str[i],str[str.size()-1]);
+            swap(str[i], str[str.size() - 1]);
             str.pop_back();
         }
     }
+}
+bool Check_permissible_symbols(const char symbol)
+{
+    int val = 0;
+    val = (int)symbol;
+    if ((val > 64 && val < 91) || (val > 96 && val < 123)) {
+        return true;
+    }
+    return false;
+}
+bool Check_permissible_word(const string str)
+{
+    for (size_t i = 0; i < str.length(); i++) {
+        if(!Check_permissible_symbols(str[i])){
+            return false;
+        }
+    }
+    return true;
 }
 vector<string> Get_data_from_document(string& path)
 {
@@ -23,6 +41,9 @@ vector<string> Get_data_from_document(string& path)
         string temp;
         document >> temp;
         Delete_punctuation_marks(temp);
+        if(!Check_permissible_word(temp)){
+            continue;
+        }
         data.push_back(temp);
     }
     document.close();
