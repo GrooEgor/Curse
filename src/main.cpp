@@ -11,6 +11,7 @@ int main(int argc, char** argv)
         vector<string> document_data = Get_data_from_document(temp);
         if (document_data.size() == 0) {
             cout << "Error opening of file - " << temp << endl;
+            return 0;
         }
     }
     return 0;

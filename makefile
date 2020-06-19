@@ -32,7 +32,7 @@ $(BUILD_TEST_DIR)output_test.o: $(TEST_DIR)output_test.cpp
 	g++ -I thirdparty -I src -c $(TEST_DIR)output_test.cpp -o $(BUILD_TEST_DIR)output_test.o $(STD_FLAG)
 
 run:
-	$(BIN_DIR)alphabet
+	$(BIN_DIR)alphabet ./example/words.txt
 
 testing:
 	$(BIN_DIR)test

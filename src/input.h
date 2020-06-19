@@ -1,4 +1,6 @@
 #ifndef INPUT_H
 #define INPUT_H
- vector<string> Get_data_from_document(string& path);
+#include <string>
+#include <vector>
+std::vector<std::string> Get_data_from_document(std::string& path);
 #endif
