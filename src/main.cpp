@@ -13,6 +13,10 @@ int main(int argc, char** argv)
             cout << "Error opening of file - " << temp << endl;
             return 0;
         }
+        Quick_Sort(document_data, 0, document_data.size() - 1);
+        for (auto& i : document_data) {
+            cout << i << endl;
+        }
     }
     return 0;
 }
