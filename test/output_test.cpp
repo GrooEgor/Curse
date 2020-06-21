@@ -4,7 +4,7 @@
 
 using namespace std;
 
-TEST_CASE("#2", "[2]")
+TEST_CASE("foo", "[output]")
 {
     REQUIRE(1 == 1);
 }

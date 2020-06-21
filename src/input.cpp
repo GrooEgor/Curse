@@ -5,7 +5,7 @@
 
 using namespace std;
 
-vector<string> Get_data_from_document(string& path)
+vector<string> Get_data_from_document(const string& path)
 {
     ifstream document(path);
     vector<string> data;
@@ -15,12 +15,17 @@ vector<string> Get_data_from_document(string& path)
     while (!document.eof()) {
         string temp;
         document >> temp;
-        Delete_punctuation_marks(temp);
-        if (!Check_permissible_word(temp)) {
-            continue;
-        }
         data.push_back(temp);
     }
     document.close();
     return data;
+}
+void Sift_document_data(vector<string>& document_data)
+{
+    for (size_t i = 0; i < document_data.size(); i++) {
+        Delete_punctuation_marks(document_data[i]);
+        if (!Check_permissible_word(document_data[i])) {
+            document_data.erase(document_data.begin() + i);
+        }
+    }
 }
