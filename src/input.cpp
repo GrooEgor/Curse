@@ -9,6 +9,7 @@ void Delete_punctuation_marks(string& str)
         if (str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?') {
             swap(str[i], str[str.size() - 1]);
             str.pop_back();
+            i--;
         }
     }
 }
