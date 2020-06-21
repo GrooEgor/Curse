@@ -1,6 +1,7 @@
 #include <catch.hpp>
 #include <string>
 #include <tools.hpp>
+#include <vector>
 
 using namespace std;
 
@@ -84,6 +85,48 @@ TEST_CASE("Check_permissible_word", "[tools]")
             {
                 bool expected = false;
                 REQUIRE(res == expected);
+            }
+        }
+    }
+}
+TEST_CASE("Quick_sort", "[tools]")
+{
+    GIVEN("Not sorted vector")
+    {
+        vector<string> given = {"bb", "aa", "cc"};
+        WHEN("Using quick sort")
+        {
+            Quick_Sort(given, 0, given.size() - 1);
+            THEN("Sorted")
+            {
+                vector<string> expected = {"aa", "bb", "cc"};
+                REQUIRE(given == expected);
+            }
+        }
+    }
+    GIVEN("Sorted vector")
+    {
+        vector<string> given = {"aa", "bb", "cc"};
+        WHEN("Using quick sort")
+        {
+            Quick_Sort(given, 0, given.size() - 1);
+            THEN("Not changed")
+            {
+                vector<string> expected = {"aa", "bb", "cc"};
+                REQUIRE(given == expected);
+            }
+        }
+    }
+    GIVEN("Reverse sorted vector")
+    {
+        vector<string> given = {"cc", "bb", "aa"};
+        WHEN("Using quick sort")
+        {
+            Quick_Sort(given, 0, given.size() - 1);
+            THEN("Sorted")
+            {
+                vector<string> expected = {"aa", "bb", "cc"};
+                REQUIRE(given == expected);
             }
         }
     }
