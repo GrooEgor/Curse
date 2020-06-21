@@ -1,5 +1,6 @@
 #ifndef TOOLS_HPP
 #define TOOLS_HPP
+
 #include <string>
 #include <vector>
 

@@ -46,3 +46,45 @@ TEST_CASE("Delete_punctuation_marks", "[tools]")
         }
     }
 }
+TEST_CASE("Check_permissible_word", "[tools]")
+{
+    GIVEN("Given permissible word")
+    {
+        string given = "lorem";
+        WHEN("Using words check function")
+        {
+            bool res = Check_permissible_word(given);
+            THEN("Passed")
+            {
+                bool expected = true;
+                REQUIRE(res == expected);
+            }
+        }
+    }
+    GIVEN("Given impermissible word")
+    {
+        string given = "} { ] [ * # a";
+        WHEN("Using words check function")
+        {
+            bool res = Check_permissible_word(given);
+            THEN("Failed")
+            {
+                bool expected = false;
+                REQUIRE(res == expected);
+            }
+        }
+    }
+    GIVEN("Given impermissible word")
+    {
+        string given = "текст";
+        WHEN("Using words check function")
+        {
+            bool res = Check_permissible_word(given);
+            THEN("Failed")
+            {
+                bool expected = false;
+                REQUIRE(res == expected);
+            }
+        }
+    }
+}
