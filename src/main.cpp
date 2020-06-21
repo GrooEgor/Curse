@@ -1,4 +1,5 @@
-#include "input.h"
+#include "input.hpp"
+#include "tools.hpp"
 #include <iostream>
 #include <vector>
 
