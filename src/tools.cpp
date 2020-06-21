@@ -6,9 +6,9 @@ using namespace std;
 void Delete_punctuation_marks(string& str)
 {
     for (size_t i = 0; i < str.length(); i++) {
-        if (str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?') {
-            swap(str[i], str[str.size() - 1]);
-            str.pop_back();
+        if (str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?'
+            || str[i] == ':' || str[i] == ';' || str[i] == '-') {
+            str.erase(str.begin() + i);
             i--;
         }
     }
