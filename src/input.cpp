@@ -26,6 +26,7 @@ void Sift_document_data(vector<string>& document_data)
         Delete_punctuation_marks(document_data[i]);
         if (!Check_permissible_word(document_data[i])) {
             document_data.erase(document_data.begin() + i);
+            i--;
         }
     }
 }
