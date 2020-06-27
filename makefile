@@ -38,10 +38,10 @@ $(BUILD_TEST_DIR)tools_test.o: $(TEST_DIR)tools_test.cpp
 	g++ -I thirdparty -I src -c $(TEST_DIR)tools_test.cpp -o $(BUILD_TEST_DIR)tools_test.o $(STD_FLAG)
 
 run:
-	$(BIN_DIR)alphabet ./example/words.txt
+	$(BIN_DIR)alphabet ./example/words.txt -f ./example/words_1.txt
 
 testing:
 	$(BIN_DIR)test
 
 clean:
-	rm -rf $(BUILD_DIR)*.o $(BUILD_TEST_DIR)*.o $(BIN_DIR)alphabet $(BIN_DIR)test
+	rm -rf $(BUILD_DIR)*.o $(BUILD_TEST_DIR)*.o $(BIN_DIR)alphabet $(BIN_DIR)test ./dictionaries/*.txt
