@@ -11,6 +11,7 @@ void Print_Words(vector<string> document_data, string path)
     for (size_t i = 0; i < document_data.size(); i++) {
         cout << document_data[i] << endl;
     }
+    cout << endl;
 }
 void Save_to_file(vector<string> document_data, string path, int number)
 {
