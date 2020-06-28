@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/Lane-x/Curse.svg?branch=master)](https://travis-ci.org/github/Lane-x/Curse)  
-# Curse
 # TRPO course project  
-Project build  
+## Project build  
 This project uses Makefile to build. Command's which you can use:  
 $ make  
 If you want to run this programm you can use command:  
